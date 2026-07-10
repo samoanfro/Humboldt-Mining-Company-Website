@@ -1,116 +1,74 @@
-<?xml version="1.0" encoding="UTF-8"?>
-<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 800 600" width="100%" height="100%">
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 520 680" aria-label="Project location map — Nevada, Elko County">
   <defs>
-    <pattern id="grid" width="40" height="40" patternUnits="userSpaceOnUse">
-      <path d="M 40 0 L 0 0 0 40" fill="none" stroke="rgba(201,165,90,0.06)" stroke-width="0.5"/>
-    </pattern>
-    <linearGradient id="bg" x1="0%" y1="0%" x2="0%" y2="100%">
-      <stop offset="0%" stop-color="#0e0f10"/>
-      <stop offset="100%" stop-color="#161819"/>
-    </linearGradient>
-    <filter id="glow">
-      <feGaussianBlur stdDeviation="4"/>
-    </filter>
+    <style>
+      .st-fill { fill: #2a2e38; stroke: #4a4f5a; stroke-width: 1.5; stroke-linejoin: round; }
+      .elko { fill: #3a3520; stroke: #c9a55a; stroke-width: 1.8; stroke-linejoin: round; }
+      .st-bdr { fill: none; stroke: #6a6f7a; stroke-width: 2; stroke-linejoin: round; }
+      .lbl { font-family: 'IBM Plex Sans', -apple-system, sans-serif; fill: #9fa0a8; }
+      .lbl-city { font-size: 11px; letter-spacing: 0.5px; }
+      .lbl-cty { font-size: 13px; font-weight: 600; fill: #c9a55a; letter-spacing: 1px; }
+      .lbl-st { font-size: 28px; font-weight: 300; fill: #4a4f5a; letter-spacing: 4px; }
+      .lbl-mine { font-size: 12.5px; font-weight: 600; fill: #f0ede4; letter-spacing: 0.3px; }
+      .lbl-dist { font-size: 10px; fill: #9fa0a8; }
+      .lbl-sm { font-size: 9.5px; fill: #6a6f7a; letter-spacing: 0.3px; }
+      .dot-c { fill: #9fa0a8; }
+      .dot-m { fill: #c9a55a; }
+      .ring { fill: none; stroke: #c9a55a; stroke-width: 1.5; }
+      .pulse { fill: none; stroke: #c9a55a; stroke-width: 1; opacity: 0.4; }
+      .lgd { fill: #1a1c22; stroke: #3a3f4a; stroke-width: 1; rx: 4; }
+    </style>
   </defs>
 
-  <!-- Background -->
-  <rect width="800" height="600" fill="url(#bg)"/>
-  <rect width="800" height="600" fill="url(#grid)"/>
+  <rect width="520" height="680" fill="#1a1c22" rx="8"/>
 
-  <!-- Title block -->
-  <g transform="translate(40, 35)">
-    <line x1="0" y1="0" x2="28" y2="0" stroke="#c9a55a" stroke-width="1"/>
-    <text x="36" y="4" fill="#c9a55a" font-family="ui-monospace, monospace" font-size="11" letter-spacing="3" font-weight="500">PROJECT LOCATION</text>
-    <text x="0" y="32" fill="#e9e6df" font-family="Georgia, serif" font-size="22" font-weight="500">State of Nevada</text>
-    <text x="0" y="54" fill="#8a857a" font-family="ui-sans-serif, sans-serif" font-size="12">Elko County · Charleston Mining District</text>
-  </g>
+  <!-- Nevada state fill -->
+  <path class="st-fill" d="M 90.3,59.0 L 241.6,59.0 L 394.0,59.0 L 394.0,139.0 L 394.0,219.0 L 394.0,299.0 L 394.0,379.0 L 394.0,459.0 L 394.0,523.8 L 388.4,531.0 L 383.3,537.4 L 377.1,542.2 L 367.0,549.4 L 363.9,555.8 L 362.9,569.4 L 360.8,577.4 L 363.9,583.0 L 367.0,607.8 L 363.9,619.0 L 345.0,579.0 L 312.9,555.0 L 299.7,539.0 L 299.2,525.4 L 234.5,459.0 L 170.3,379.0 L 141.2,339.0 L 124.4,304.6 L 96.4,285.4 L 90.3,299.0 L 90.3,273.4 L 90.3,219.0 L 90.3,139.0 L 90.3,59.0 Z"/>
 
-  <!-- Nevada state outline (approximate, stylized) -->
-  <!-- Roughly rhomboidal shape: NV runs from northwest to southeast -->
-  <g transform="translate(180, 110)">
-    <!-- State fill -->
-    <path d="M 0,30 L 380,30 L 380,290 L 280,400 L 0,400 Z" 
-          fill="#1d2023" stroke="#4b4f55" stroke-width="1.5"/>
-    
-    <!-- Elko County (NE corner of Nevada) - highlighted -->
-    <path d="M 200,30 L 380,30 L 380,140 L 200,140 Z" 
-          fill="rgba(201,165,90,0.12)" 
-          stroke="#c9a55a" 
-          stroke-width="1.5"/>
-    
-    <!-- Elko county label -->
-    <text x="290" y="90" 
-          fill="#c9a55a" 
-          font-family="ui-sans-serif, sans-serif" 
-          font-size="13" 
-          font-weight="500"
-          text-anchor="middle">ELKO COUNTY</text>
-    
-    <!-- State label -->
-    <text x="190" y="270" 
-          fill="#4b4f55" 
-          font-family="Georgia, serif" 
-          font-size="42" 
-          font-weight="400"
-          text-anchor="middle"
-          letter-spacing="6"
-          opacity="0.5">NEVADA</text>
-    
-    <!-- Prunty Mine marker — top portion of Elko County (north Elko, near Jarbidge) -->
-    <g transform="translate(330, 55)">
-      <!-- Glow -->
-      <circle cx="0" cy="0" r="14" fill="#c9a55a" opacity="0.18" filter="url(#glow)"/>
-      <circle cx="0" cy="0" r="10" fill="#c9a55a" opacity="0.3"/>
-      <!-- Marker pin -->
-      <circle cx="0" cy="0" r="5" fill="#c9a55a"/>
-      <circle cx="0" cy="0" r="2" fill="#0e0f10"/>
-      <!-- Crosshair lines -->
-      <line x1="-22" y1="0" x2="-12" y2="0" stroke="#c9a55a" stroke-width="0.8"/>
-      <line x1="12" y1="0" x2="22" y2="0" stroke="#c9a55a" stroke-width="0.8"/>
-      <line x1="0" y1="-22" x2="0" y2="-12" stroke="#c9a55a" stroke-width="0.8"/>
-      <line x1="0" y1="12" x2="0" y2="22" stroke="#c9a55a" stroke-width="0.8"/>
-    </g>
-    
-    <!-- Pull-line to label -->
-    <line x1="335" y1="165" x2="335" y2="195" stroke="#c9a55a" stroke-width="0.8"/>
-    
-    <!-- Prunty Mine label box -->
-    <g transform="translate(195, 200)">
-      <rect x="0" y="0" width="280" height="48" fill="#0e0f10" stroke="#c9a55a" stroke-width="1"/>
-      <text x="14" y="20" fill="#c9a55a" font-family="ui-monospace, monospace" font-size="9" letter-spacing="2" font-weight="500">PRUNTY MINE</text>
-      <text x="14" y="38" fill="#e9e6df" font-family="ui-sans-serif, sans-serif" font-size="11">Charleston District · Patented claims</text>
-    </g>
-    
-    <!-- Compass rose (top right of state) -->
-    <g transform="translate(355, 380)">
-      <circle cx="0" cy="0" r="20" fill="none" stroke="#4b4f55" stroke-width="0.8"/>
-      <line x1="0" y1="-16" x2="0" y2="-8" stroke="#c9a55a" stroke-width="1.5"/>
-      <text x="0" y="-22" fill="#c9a55a" font-family="ui-sans-serif, sans-serif" font-size="10" text-anchor="middle" font-weight="600">N</text>
-    </g>
-  </g>
+  <!-- Elko County fill -->
+  <path class="elko" d="M 394.0,59.0 L 394.0,139.0 L 394.0,159.0 L 350.1,159.0 L 314.5,159.0 L 294.1,147.0 L 263.5,139.0 L 241.6,59.0 L 394.0,59.0 Z"/>
 
-  <!-- Neighboring state hints (subtle text labels) -->
-  <g font-family="ui-sans-serif, sans-serif" font-size="10" fill="#4b4f55" letter-spacing="2">
-    <text x="190" y="105" text-anchor="end" opacity="0.5">OREGON</text>
-    <text x="190" y="295" text-anchor="end" opacity="0.5">CALIFORNIA</text>
-    <text x="585" y="105" opacity="0.5">IDAHO</text>
-    <text x="585" y="180" opacity="0.5">UTAH</text>
-    <text x="585" y="320" opacity="0.5">ARIZONA</text>
-  </g>
+  <!-- State border on top -->
+  <path class="st-bdr" d="M 90.3,59.0 L 241.6,59.0 L 394.0,59.0 L 394.0,139.0 L 394.0,219.0 L 394.0,299.0 L 394.0,379.0 L 394.0,459.0 L 394.0,523.8 L 388.4,531.0 L 383.3,537.4 L 377.1,542.2 L 367.0,549.4 L 363.9,555.8 L 362.9,569.4 L 360.8,577.4 L 363.9,583.0 L 367.0,607.8 L 363.9,619.0 L 345.0,579.0 L 312.9,555.0 L 299.7,539.0 L 299.2,525.4 L 234.5,459.0 L 170.3,379.0 L 141.2,339.0 L 124.4,304.6 L 96.4,285.4 L 90.3,299.0 L 90.3,273.4 L 90.3,219.0 L 90.3,139.0 L 90.3,59.0 Z"/>
 
-  <!-- Scale bar -->
-  <g transform="translate(40, 560)">
-    <line x1="0" y1="0" x2="80" y2="0" stroke="#4b4f55" stroke-width="1"/>
-    <line x1="0" y1="-3" x2="0" y2="3" stroke="#4b4f55" stroke-width="1"/>
-    <line x1="80" y1="-3" x2="80" y2="3" stroke="#4b4f55" stroke-width="1"/>
-    <text x="0" y="-8" fill="#8a857a" font-family="ui-monospace, monospace" font-size="9" letter-spacing="1">~ 200 MI</text>
-  </g>
+  <!-- State name watermark -->
+  <text x="260" y="400" class="lbl lbl-st" text-anchor="middle" transform="rotate(-75 260 400)" opacity="0.25">NEVADA</text>
 
-  <!-- Reference note -->
-  <text x="760" y="568" 
-        text-anchor="end" 
-        fill="#4b4f55" 
-        font-family="ui-monospace, monospace" 
-        font-size="9" 
-        letter-spacing="1">SCHEMATIC · NOT FOR NAVIGATION</text>
+  <!-- Cities -->
+  <circle cx="100.0" cy="256.6" r="3" class="dot-c"/>
+  <text x="112.0" y="260.6" class="lbl lbl-city">Reno</text>
+  <circle cx="337.9" cy="525.4" r="3" class="dot-c"/>
+  <text x="349.9" y="529.4" class="lbl lbl-city">Las Vegas</text>
+  <circle cx="205.4" cy="141.4" r="2.5" class="dot-c"/>
+  <text x="217.4" y="145.4" class="lbl lbl-sm">Winnemucca</text>
+  <circle cx="102.0" cy="286.2" r="2.5" class="dot-c"/>
+  <text x="114.0" y="290.2" class="lbl lbl-sm">Carson City</text>
+  <circle cx="306.3" cy="152.6" r="4" class="dot-c"/>
+  <text x="318.3" y="156.6" class="lbl lbl-city">Elko</text>
+
+  <!-- Prunty Mine -->
+  <circle cx="309.4" cy="87.0" r="18" class="pulse">
+    <animate attributeName="r" values="12;22;12" dur="3s" repeatCount="indefinite"/>
+    <animate attributeName="opacity" values="0.4;0.1;0.4" dur="3s" repeatCount="indefinite"/>
+  </circle>
+  <circle cx="309.4" cy="87.0" r="10" class="ring"/>
+  <circle cx="309.4" cy="87.0" r="4.5" class="dot-m"/>
+  <text x="309.4" y="111.0" class="lbl lbl-mine" text-anchor="middle">Prunty Mine</text>
+  <text x="309.4" y="124.0" class="lbl lbl-dist" text-anchor="middle">Charleston Mining District</text>
+
+  <!-- Elko County label -->
+  <text x="309.4" y="143.0" class="lbl lbl-cty" text-anchor="middle">ELKO COUNTY</text>
+
+  <!-- Neighboring states -->
+  <text x="260" y="22" class="lbl lbl-sm" text-anchor="middle" opacity="0.5">IDAHO / OREGON</text>
+  <text x="475" y="250" class="lbl lbl-sm" text-anchor="middle" opacity="0.5" transform="rotate(90 475 250)">UTAH</text>
+  <text x="30" y="350" class="lbl lbl-sm" text-anchor="middle" opacity="0.5" transform="rotate(-90 30 350)">CALIFORNIA</text>
+  <text x="350" y="650" class="lbl lbl-sm" text-anchor="middle" opacity="0.5">ARIZONA</text>
+
+  <!-- Legend -->
+  <rect x="20" y="598" width="200" height="62" class="lgd"/>
+  <circle cx="38" cy="617" r="4.5" class="dot-m"/>
+  <text x="50" y="621" class="lbl" style="font-size:11px; fill:#f0ede4;">Prunty Mine project</text>
+  <rect x="32" y="632" width="12" height="12" rx="2" fill="#3a3520" stroke="#c9a55a" stroke-width="1"/>
+  <text x="50" y="643" class="lbl" style="font-size:11px; fill:#d5d2c8;">Elko County</text>
+
 </svg>
